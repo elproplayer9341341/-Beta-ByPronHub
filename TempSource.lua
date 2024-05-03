@@ -173,6 +173,8 @@ local TweenToRevive = function()
 		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new(0.25), {CFrame = downedplr:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(3,1,0)})
 
 		NewTween:Play()
+           local vim = game:service("VirtualInputManager")
+           vim:SendKeyEvent(true, "E", false, game)
 	end
 end
 
