@@ -2,7 +2,7 @@
 --==== Gui ====--
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') then
   warn('====')
-  warn('Last Update: 0 days ago')
+  warn('Last Update: 02/05/2024')
   warn('Current: 🟢Working')
   warn('❌')
   warn('====')
@@ -14,9 +14,12 @@ local AutoRes = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local AutoEvent = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local TweenToDowned = Instance.new("TextButton")
+local AutoDowned = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local Active1 = Instance.new("BoolValue")
+local Active3 = Instance.new("BoolValue")
 local Active2 = Instance.new("BoolValue")
 Active1.Parent = game.Workspace
 Active1.Value = false
@@ -25,6 +28,10 @@ Active1.Name = 'Active1'
 Active2.Parent = game.Workspace
 Active2.Value = false
 Active2.Name = 'Active2'
+
+Active3.Parent = game.Workspace
+Active3.Value = false
+Active3.Name = 'Active3'
 
 --==== Gui Settings ====--
 ByPron.Name = "ByPron"
@@ -49,7 +56,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 190, 0, 38)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "ByPron Beta v1.1"
+Title.Text = "ByPron Beta v1.2"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
@@ -116,6 +123,21 @@ TweenToDowned.TextWrapped = true
 
 UICorner_3.Parent = TweenToDowned
 
+AutoDowned.Name = "AutoDowned"
+AutoDowned.Parent = GUI
+AutoDowned.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
+AutoDowned.BorderColor3 = Color3.fromRGB(41, 255, 95)
+AutoDowned.BorderSizePixel = 0
+AutoDowned.Position = UDim2.new(0.0536235608, 0, 0.669562161, 0)
+AutoDowned.Size = UDim2.new(0, 167, 0, 27)
+AutoDowned.Font = Enum.Font.FredokaOne
+AutoDowned.Text = "Auto Downed Player"
+AutoDowned.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoDowned.TextSize = 14.000
+AutoDowned.TextWrapped = true
+
+UICorner_4.Parent = AutoDowned
+
 --==== Scripts ====--
 
 AutoRes.MouseButton1Click:Connect(function()
@@ -130,6 +152,42 @@ AutoRes.MouseButton1Click:Connect(function()
 	if Active1.Value then
 		Active1.Value = false
 		AutoRes.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end
+	end
+end)
+
+local WorkspacePlayers = game:GetService("Workspace").Game.Players
+
+local GetDownedPlr = function()
+	for i,v in pairs(WorkspacePlayers:GetChildren()) do
+		if v:GetAttribute("Downed") then
+			return v
+		end
+	end
+end
+  
+local TweenToRevive = function()
+	local downedplr = GetDownedPlr()
+	if downedplr ~= nil and downedplr:FindFirstChild('HumanoidRootPart') then
+		local TweenService = game:GetService("TweenService")
+		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new(0.25), {CFrame = downedplr:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(3,1,0)})
+
+		NewTween:Play()
+	end
+end
+
+AutoDowned.MouseButton1Click:Connect(function()
+	if not Active3.Value then
+		Active3.Value = true
+		AutoDowned.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
+		while Active3.Value == true do
+			wait()
+	TweenToRevive()
+		end
+	else
+	if Active3.Value then
+		Active3.Value = false
+		AutoDowned.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	end
 	end
 end)
