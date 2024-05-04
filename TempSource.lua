@@ -1,8 +1,9 @@
 --==== Made by Me --====
 --==== Gui ====--
-if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') then
+if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
+  warn("ByPron loaded on Evade")
   warn('====')
-  warn('Last Update: 02/05/2024')
+  warn('Last Update: 03/05/2024')
   warn('Current: 🟢Working')
   warn('❌')
   warn('====')
@@ -56,7 +57,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 190, 0, 38)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "ByPron Beta v1.2"
+Title.Text = "ByPron Beta v1.3"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
@@ -125,7 +126,7 @@ UICorner_3.Parent = TweenToDowned
 
 AutoDowned.Name = "AutoDowned"
 AutoDowned.Parent = GUI
-AutoDowned.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
+AutoDowned.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 AutoDowned.BorderColor3 = Color3.fromRGB(41, 255, 95)
 AutoDowned.BorderSizePixel = 0
 AutoDowned.Position = UDim2.new(0.059, 0,0.654, 0)
@@ -145,7 +146,7 @@ AutoRes.MouseButton1Click:Connect(function()
 		Active1.Value = true
 		AutoRes.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
 		while Active1.Value == true do
-			wait()
+			wait(.1)
 			game.ReplicatedStorage.Events.Respawn:FireServer()
 		end
 	else
@@ -184,7 +185,9 @@ AutoDowned.MouseButton1Click:Connect(function()
 		AutoDowned.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
 		while Active3.Value == true do
 			wait()
-	TweenToRevive()
+		if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+	        TweenToRevive()
+		end
 		end
 	else
 	if Active3.Value then
