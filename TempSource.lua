@@ -1,5 +1,12 @@
 --==== Made by Me --====
 --==== Gui ====--
+game.ReplicatedStorage.Events.Respawn:FireServer()
+wait(2)
+local ohString1 = "Loading.."
+game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
+wait(1)
+local ohString2 = "Logged how @"..game.Players.LocalPlayer.Name
+game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString2)
 local LoadingSn = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -193,7 +200,7 @@ UICorner_2.Parent = AutoEvent
 
 TweenToDowned.Name = "TweenToDowned"
 TweenToDowned.Parent = GUI
-TweenToDowned.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
+TweenToDowned.BackgroundColor3 = Color3.fromRGB(255, 48, 41)
 TweenToDowned.BorderColor3 = Color3.fromRGB(41, 255, 95)
 TweenToDowned.BorderSizePixel = 0
 TweenToDowned.Position = UDim2.new(0.058886718, 0, 0.516018867, 0)
@@ -256,6 +263,8 @@ local TweenToRevive = function()
 		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new(0.25), {CFrame = downedplr:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(3,1,0)})
 
 		NewTween:Play()
+			wait(.1)
+		workspace.Game.Settings:SetAttribute("ReviveTime", 1.9)
            local vim = game:service("VirtualInputManager")
            vim:SendKeyEvent(true, "E", false, game)
 	end
@@ -318,18 +327,27 @@ local GetDownedPlr = function()
 	end
 end
   
-local TweenToRevive = function()
+local TweenToRevive2 = function()
 	local downedplr = GetDownedPlr()
 	if downedplr ~= nil and downedplr:FindFirstChild('HumanoidRootPart') then
 		local TweenService = game:GetService("TweenService")
 		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.25), {CFrame = downedplr.HumanoidRootPart.CFrame + Vector3.new(3,1,0)})
-
+local ohString1 = "Tweened to "..downedplr.Name
+				game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
 		NewTween:Play()
 	end
 end
 
 TweenToDowned.MouseButton1Click:Connect(function()
-	TweenToRevive()
+	TweenToRevive2()
+	local tween = game:GetService("TweenService")
+	local t = tween:Create(TweenToDowned, TweenInfo.new(0.25), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)})
+        local t2 = tween:Create(TweenToDowned, TweenInfo.new(0.25), {BackgroundColor3 = Color3.fromRGB(255, 48, 41)})
+        t:Play()
+
+        t.Completed:Connect(function()
+       t2:Play()
+	end)
 end)
 
 --==== what ====--
