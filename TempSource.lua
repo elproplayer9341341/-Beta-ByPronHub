@@ -1,9 +1,91 @@
 --==== Made by Me --====
 --==== Gui ====--
+local LoadingSn = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Actions1 = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+
+LoadingSn.Name = "LoadingByPron"
+LoadingSn.Parent = game.CoreGui
+LoadingSn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = LoadingSn
+Frame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.38529411, 0, 0.36764434, 0)
+Frame.Size = UDim2.new(0, 312, 0, 154)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.199961737, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 34)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "ByPron"
+TextLabel.TextColor3 = Color3.fromRGB(253, 253, 253)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.177525833, 0, 0.33116883, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 53)
+TextLabel_2.Font = Enum.Font.FredokaOne
+TextLabel_2.Text = "Loaded!"
+TextLabel_2.TextColor3 = Color3.fromRGB(253, 253, 253)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.0249234717, 0, 0.274871439, 0)
+Frame_2.Size = UDim2.new(0, 297, 0, 2)
+
+UICorner.CornerRadius = UDim.new(0, 2)
+UICorner.Parent = Frame
+
+Actions1.Name = "Actions1"
+Actions1.Parent = Frame
+Actions1.BackgroundColor3 = Color3.fromRGB(255, 48, 41)
+Actions1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Actions1.BorderSizePixel = 0
+Actions1.Position = UDim2.new(0.022435898, 0, 0.714285731, 0)
+Actions1.Size = UDim2.new(0, 297, 0, 35)
+Actions1.Font = Enum.Font.FredokaOne
+Actions1.Text = "Cancel"
+Actions1.TextColor3 = Color3.fromRGB(22, 22, 22)
+Actions1.TextScaled = true
+Actions1.TextSize = 14.000
+Actions1.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = Actions1
+
+Actions1.MouseButton1Click:Connect(function()
+Actions1.Text = "Cancelling.."
+can = false
+wait(.1)
+Actions1.Text = "Success"
+LoadingSn:Destroy()
+end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
   warn("ByPron loaded on Evade")
   warn('====')
-  warn('Last Update: 03/05/2024')
+  warn('Last Update: 07/05/2024')
   warn('Current: 🟢Working')
   warn('❌')
   warn('====')
@@ -57,7 +139,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 190, 0, 38)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "ByPron Beta v1.3"
+Title.Text = "ByPron Beta v1.4"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
