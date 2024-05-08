@@ -8,6 +8,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1
 wait(1)
 local ohString2 = "Logged how @"..game.Players.LocalPlayer.Name
 game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString2)
+--[[
 local LoadingSn = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -89,6 +90,19 @@ can = false
 wait(.1)
 Actions1.Text = "Success"
 LoadingSn:Destroy()
+end)
+--]]
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/elproplayer9341341/NotificationLibrary/main/CreateLib"))()
+
+local NotificationText = "ByPron"
+
+local NotificationDescription = "Loaded"
+
+local ActionText = "Ok :3"
+
+NewNotification(NotificationText, NotificationDescription, ActionText, function()
+    warn("¡Loaded!")
 end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
   warn("ByPron loaded on Evade")
