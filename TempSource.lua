@@ -107,7 +107,7 @@ end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
   warn("ByPron loaded on Evade")
   warn('====')
-  warn('Last Update: 07/05/2024')
+  warn('Last Update: 08/05/2024')
   warn('Current: 🟢Working')
   warn('❌')
   warn('====')
@@ -161,7 +161,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 190, 0, 38)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "ByPron Beta v1.4"
+Title.Text = "ByPron Beta v1.5"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
@@ -244,14 +244,23 @@ AutoDowned.TextWrapped = true
 UICorner_4.Parent = AutoDowned
 
 --==== Scripts ====--
+local WorkspacePlayers = game:GetService("Workspace").Game.Players
 
+local GetDowned = function()
+	for i,v in pairs(WorkspacePlayers:GetChildren()) do
+		if v:GetAttribute("Downed") and v.Name == game.Players.LocalPlayer.Name then
+			game.ReplicatedStorage.Events.Respawn:FireServer()
+		end
+	end
+end
+		
 AutoRes.MouseButton1Click:Connect(function()
 	if not Active1.Value then
 		Active1.Value = true
 		AutoRes.BackgroundColor3 = Color3.fromRGB(41, 255, 95)
 		while Active1.Value == true do
 			wait(.1)
-			game.ReplicatedStorage.Events.Respawn:FireServer()
+			GetDowned()
 		end
 	else
 	if Active1.Value then
