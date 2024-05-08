@@ -1,5 +1,6 @@
 --==== Made by Me --====
 --==== Gui ====--
+function LoadEvadeScript()
 game.ReplicatedStorage.Events.Respawn:FireServer()
 wait(2)
 local ohString1 = "Loading.."
@@ -447,3 +448,79 @@ Notification:Destroy()
 end)
 
 end
+end
+--==== New Game Section ====--
+local SelectGames = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Games = Instance.new("Frame")
+local GamesFram = Instance.new("ScrollingFrame")
+local Evade = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
+SelectGames.Name = "SelectGamesByPron"
+SelectGames.Parent = game.CoreGui
+SelectGames.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = SelectGames
+Frame.BackgroundColor3 = Color3.fromRGB(255, 81, 46)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.354411751, 0, 0.26430127, 0)
+Frame.Size = UDim2.new(0, 395, 0, 248)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.26329115, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "- Select Game - ByPron"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Games.Name = "Games"
+Games.Parent = Frame
+Games.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Games.BackgroundTransparency = 1.000
+Games.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Games.BorderSizePixel = 0
+Games.Position = UDim2.new(0.22025317, 0, 0.25, 0)
+Games.Size = UDim2.new(0, 217, 0, 171)
+
+GamesFram.Name = "GamesFram"
+GamesFram.Parent = Games
+GamesFram.Active = true
+GamesFram.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GamesFram.BackgroundTransparency = 1.000
+GamesFram.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GamesFram.BorderSizePixel = 0
+GamesFram.Position = UDim2.new(0, 0, -1.7846537e-07, 0)
+GamesFram.Size = UDim2.new(0, 217, 0, 172)
+Frame.Active = true
+Frame.Draggable = true
+
+Evade.Name = "Evade"
+Evade.Parent = GamesFram
+Evade.BackgroundColor3 = Color3.fromRGB(57, 255, 12)
+Evade.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Evade.BorderSizePixel = 0
+Evade.Position = UDim2.new(0.156682029, 0, 0.0218030345, 0)
+Evade.Size = UDim2.new(0, 165, 0, 31)
+Evade.Font = Enum.Font.FredokaOne
+Evade.Text = "Evade"
+Evade.TextColor3 = Color3.fromRGB(255, 255, 255)
+Evade.TextScaled = true
+Evade.TextSize = 14.000
+Evade.TextWrapped = true
+
+UICorner.Parent = Evade
+
+Evade.MouseButton1Click:Connect(function()
+LoadEvadeScript()
+SelectGames:Destroy()
+end)
