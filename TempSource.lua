@@ -2,7 +2,7 @@
 --==== Gui ====--
 function LoadEvadeScript()
 game.ReplicatedStorage.Events.Respawn:FireServer()
-wait(2)
+wait(3.5)
 local ohString1 = "Loading.."
 game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
 wait(1)
