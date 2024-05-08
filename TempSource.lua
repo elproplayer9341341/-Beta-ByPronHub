@@ -338,8 +338,6 @@ AutoEvent.MouseButton1Click:Connect(function()
 		end
 	end
 end)
-  
---==== Script Copied & Modified. Owner: 9Strew (Github) ====--
 
 local WorkspacePlayers = game:GetService("Workspace").Game.Players
 
