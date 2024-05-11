@@ -470,6 +470,8 @@ end)
 
 end
 end
+
+function Games()
 --==== New Game Section ====--
 local SelectGames = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -545,3 +547,181 @@ Evade.MouseButton1Click:Connect(function()
 LoadEvadeScript()
 SelectGames:Destroy()
 end)
+end
+
+local KeySystem = Instance.new("ScreenGui")
+local GUI = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local KeySystem_2 = Instance.new("TextLabel")
+local KeySystemText = Instance.new("TextLabel")
+local KeyText = Instance.new("TextLabel")
+local KeyBox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local GetKey = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local CheckKey = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local RandomString = math.random(1, 100000)
+
+KeySystem.Name = "KeySystem_"..RandomString
+KeySystem.Parent = game.CoreGui
+KeySystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+GUI.Name = "GUI"
+GUI.Parent = KeySystem
+GUI.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+GUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GUI.BorderSizePixel = 0
+GUI.Position = UDim2.new(0.38014707, 0, 0.346886516, 0)
+GUI.Size = UDim2.new(0, 326, 0, 222)
+
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = GUI
+
+KeySystem_2.Name = "KeySystem"
+KeySystem_2.Parent = GUI
+KeySystem_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeySystem_2.BackgroundTransparency = 1.000
+KeySystem_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KeySystem_2.BorderSizePixel = 0
+KeySystem_2.Position = UDim2.new(0.0521472394, 0, 0.0388849415, 0)
+KeySystem_2.Size = UDim2.new(0, 185, 0, 44)
+KeySystem_2.Font = Enum.Font.FredokaOne
+KeySystem_2.Text = "Key System"
+KeySystem_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeySystem_2.TextScaled = true
+KeySystem_2.TextSize = 14.000
+KeySystem_2.TextWrapped = true
+
+KeySystemText.Name = "KeySystemText"
+KeySystemText.Parent = GUI
+KeySystemText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeySystemText.BackgroundTransparency = 1.000
+KeySystemText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KeySystemText.BorderSizePixel = 0
+KeySystemText.Position = UDim2.new(0.0521472394, 0, 0.236082062, 0)
+KeySystemText.Size = UDim2.new(0, 193, 0, 16)
+KeySystemText.Font = Enum.Font.FredokaOne
+KeySystemText.Text = "Unlock Content With Your Key."
+KeySystemText.TextColor3 = Color3.fromRGB(195, 195, 195)
+KeySystemText.TextScaled = true
+KeySystemText.TextSize = 14.000
+KeySystemText.TextWrapped = true
+
+KeyText.Name = "KeyText"
+KeyText.Parent = GUI
+KeyText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeyText.BackgroundTransparency = 1.000
+KeyText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KeyText.BorderSizePixel = 0
+KeyText.Position = UDim2.new(-0.033742331, 0, 0.409178853, 0)
+KeyText.Size = UDim2.new(0, 81, 0, 19)
+KeyText.Font = Enum.Font.FredokaOne
+KeyText.Text = "Key"
+KeyText.TextColor3 = Color3.fromRGB(236, 236, 236)
+KeyText.TextScaled = true
+KeyText.TextSize = 14.000
+KeyText.TextWrapped = true
+
+KeyBox.Name = "KeyBox"
+KeyBox.Parent = GUI
+KeyBox.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+KeyBox.BorderColor3 = Color3.fromRGB(1, 1, 1)
+KeyBox.BorderSizePixel = 1
+KeyBox.Position = UDim2.new(0.033742331, 0, 0.525307477, 0)
+KeyBox.Size = UDim2.new(0, 304, 0, 27)
+KeyBox.Font = Enum.Font.FredokaOne
+KeyBox.PlaceholderText = "Enter Access Key"
+KeyBox.Text = ""
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.TextScaled = true
+KeyBox.TextSize = 14.000
+KeyBox.TextWrapped = true
+
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = KeyBox
+
+GetKey.Name = "GetKey"
+GetKey.Parent = GUI
+GetKey.BackgroundColor3 = Color3.fromRGB(76, 186, 255)
+GetKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetKey.BorderSizePixel = 0
+GetKey.Position = UDim2.new(0.0306748468, 0, 0.685858905, 0)
+GetKey.Size = UDim2.new(0, 311, 0, 24)
+GetKey.Font = Enum.Font.FredokaOne
+GetKey.Text = "Get Key With Ads"
+GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+GetKey.TextScaled = true
+GetKey.TextSize = 14.000
+GetKey.TextWrapped = true
+
+UICorner_3.CornerRadius = UDim.new(0, 6)
+UICorner_3.Parent = GetKey
+
+CheckKey.Name = "CheckKey"
+CheckKey.Parent = GUI
+CheckKey.BackgroundColor3 = Color3.fromRGB(76, 186, 255)
+CheckKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CheckKey.BorderSizePixel = 0
+CheckKey.Position = UDim2.new(0.0306748468, 0, 0.83969444, 0)
+CheckKey.Size = UDim2.new(0, 311, 0, 24)
+CheckKey.Font = Enum.Font.FredokaOne
+CheckKey.Text = "Check Key"
+CheckKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+CheckKey.TextScaled = true
+CheckKey.TextSize = 14.000
+CheckKey.TextWrapped = true
+
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = CheckKey
+
+GUI.Active = true
+GUI.Draggable = true
+
+GetKey.MouseButton1Click:Connect(function()
+    GetKey.Text = "..."
+    wait(2)
+    GetKey.Text = "ByPron on TOP (5)"
+    wait(1)
+    GetKey.Text = "ByPron on TOP (4)"
+    wait(1)
+    GetKey.Text = "ByPron on TOP (3)"
+    wait(1)
+    GetKey.Text = "ByPron on TOP (2)"
+    wait(1) 
+    GetKey.Text = "ByPron on TOP (1)"
+    wait(1)
+    GetKey.Text = "Loading.."
+    wait(3)
+    GetKey.Text = "AF413JS10L"
+end)
+
+CheckKey.MouseButton1Click:Connect(function()
+	if KeyBox.Text == "AF413JS10L" then
+		CheckKey.Text = "Key Verified!"
+		wait(1)
+		CheckKey.Text = "Check Key"
+		Games()
+local starterGui = game:GetService("StarterGui")
+
+starterGui:SetCore("SendNotification", {
+    Title = "Key",
+    Text = "10 days to change.",
+    Duration = 8
+})
+		GUI:Destroy()
+	else
+		local TweenService = game:GetService("TweenService")
+		local Tween = TweenService:Create(CheckKey, TweenInfo.new(0.25), {BackgroundColor3 = Color3.fromRGB(255, 112, 93)})
+		local Tween1 = TweenService:Create(CheckKey, TweenInfo.new(0.25), {BackgroundColor3 = Color3.fromRGB(76, 186, 255)})
+
+		CheckKey.Text = "Check Key"
+		
+		Tween.Completed:Connect(function()
+			Tween1:Play()
+		end)
+         
+        Tween:Play()
+	end
+end)
+
