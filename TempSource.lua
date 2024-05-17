@@ -1,4 +1,7 @@
---==== Made by Me --====
+==========================
+====== Made by Me ======
+=======================
+
 --==== Gui ====--
 function LoadEvadeScript()
 game.ReplicatedStorage.Events.Respawn:FireServer()
@@ -105,12 +108,17 @@ NewNotification(NotificationText, NotificationDescription, ActionText, function(
     warn("¡Loaded!")
 end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
-  warn("ByPron loaded on Evade")
-  warn('====')
-  warn('Last Update: 08/05/2024')
-  warn('Current: 🟢Working')
-  warn('❌')
-  warn('====')
+====================================
+ ======= ByPron Loaded 100% =======
+ wait(.1)
+  ====== Last Update %2024% ======
+  wait(.1)
+    === Current is unpatched ===
+    wait(.1)
+     ==     Free Script      ==
+      wait(.1)
+      =     Version 1.6      =
+  ================================
 local ByPron = Instance.new("ScreenGui")
 local GUI = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
@@ -161,7 +169,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 190, 0, 38)
 Title.Font = Enum.Font.FredokaOne
-Title.Text = "ByPron Beta v1.5"
+Title.Text = "ByPron Beta v1.6"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
@@ -287,7 +295,7 @@ local TweenToRevive = function()
 		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"), TweenInfo.new(0.25), {CFrame = downedplr:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(3,1,0)})
 
 		NewTween:Play()
-			wait(.1)
+			wait(.2)
 		workspace.Game.Settings:SetAttribute("ReviveTime", 1.9)
            local vim = game:service("VirtualInputManager")
            vim:SendKeyEvent(true, "E", false, game)
@@ -325,8 +333,6 @@ AutoEvent.MouseButton1Click:Connect(function()
 			
 			for i,v in pairs(Tickets:GetChildren()) do
 				if v:FindFirstChild("HumanoidRootPart") then
-					game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Anchored = false
-					wait(1)
 					game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = v.HumanoidRootPart.CFrame
 				end
 			end
@@ -354,7 +360,7 @@ local TweenToRevive2 = function()
 	if downedplr ~= nil and downedplr:FindFirstChild('HumanoidRootPart') then
 		local TweenService = game:GetService("TweenService")
 		local NewTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.25), {CFrame = downedplr.HumanoidRootPart.CFrame + Vector3.new(3,1,0)})
-local ohString1 = "Tweened to "..downedplr.Name
+local ohString1 = "Tweened to @"..downedplr.Name
 				game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
 		NewTween:Play()
 	end
@@ -706,7 +712,7 @@ local starterGui = game:GetService("StarterGui")
 
 starterGui:SetCore("SendNotification", {
     Title = "Key",
-    Text = "10 days to change.",
+    Text = "? days to change.",
     Duration = 8
 })
 		GUI:Destroy()
