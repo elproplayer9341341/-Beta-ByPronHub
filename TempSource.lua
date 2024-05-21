@@ -1,8 +1,7 @@
---[[
-==========================
-====== Made by Me ======
-=======================
---]]
+
+--==========================
+--====== Made by Me ======
+--=======================
 --==== Gui ====--
 function LoadEvadeScript()
 game.ReplicatedStorage.Events.Respawn:FireServer()
@@ -109,19 +108,19 @@ NewNotification(NotificationText, NotificationDescription, ActionText, function(
     warn("¡Loaded!")
 end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
---]]
-====================================
- ======= ByPron Loaded 100% =======
+
+print("====================================")
+print("======= ByPron Loaded 100% =======")
  wait(.1)
-  ====== Last Update %2024% ======
+print("====== Last Update %2024% ======")
   wait(.1)
-    === Current is unpatched ===
+  print("=== Current is No patched ===")
     wait(.1)
-     ==     Free Script      ==
+     print("==     Free Script      ==")
       wait(.1)
-      =     Version 1.6      =
-  ================================
---[[
+       print("=     Version 1.6      =")
+  print("================================")
+
 local ByPron = Instance.new("ScreenGui")
 local GUI = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
