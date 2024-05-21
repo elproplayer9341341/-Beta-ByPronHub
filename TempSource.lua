@@ -1,7 +1,8 @@
+--[[
 ==========================
 ====== Made by Me ======
 =======================
-
+--]]
 --==== Gui ====--
 function LoadEvadeScript()
 game.ReplicatedStorage.Events.Respawn:FireServer()
@@ -108,6 +109,7 @@ NewNotification(NotificationText, NotificationDescription, ActionText, function(
     warn("¡Loaded!")
 end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
+--[[
 ====================================
  ======= ByPron Loaded 100% =======
  wait(.1)
@@ -119,6 +121,7 @@ if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChi
       wait(.1)
       =     Version 1.6      =
   ================================
+--]]
 local ByPron = Instance.new("ScreenGui")
 local GUI = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
