@@ -109,17 +109,11 @@ NewNotification(NotificationText, NotificationDescription, ActionText, function(
 end)
 if not game.CoreGui:FindFirstChild('ByPron') and not game.Workspace:FindFirstChild('Active1') and not game.Workspace:FindFirstChild('Active2') and not game.Workspace:FindFirstChild("Active3") then
 
-print("====================================")
-print("======= ByPron Loaded 100% =======")
- wait(.1)
-print("====== Last Update %2024% ======")
-  wait(.1)
-  print("=== Current is No patched ===")
-    wait(.1)
-     print("==     Free Script      ==")
-      wait(.1)
-       print("=     Version 1.6      =")
-  print("================================")
+print("-----------------------")
+print(" ByPron Loaded 100% ")
+print(" Version 1.6 ")
+print(" Patched: ✅No")
+print(" Last Update: 05/2024 ")
 
 local ByPron = Instance.new("ScreenGui")
 local GUI = Instance.new("Frame")
